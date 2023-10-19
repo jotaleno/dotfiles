@@ -1,0 +1,12 @@
+[user]
+	name = leno
+[init]
+	defaultBranch = main
+[core]
+	excludefiles = ~/.gitignore_global
+	pager = delta
+[filter "lfs"]
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+  process = git-lfs filter-process
+  required = true
