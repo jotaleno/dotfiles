@@ -1,0 +1,25 @@
+[user]
+   name = leno
+   email = 4483665+jotaleno@users.noreply.github.com 
+[init]
+   defaultBranch = main
+[core]
+   excludefiles = ~/.gitignore_global
+   pager = delta
+[interactive]
+   diffFilter = delta --color-only
+[delta]
+   navigate = true
+   light = false
+   side-by-side = true
+   line-numbers = true
+   true-color = always
+[interactive]
+   diffFilter = delta --color-only
+[diff]
+   colorMoved = default
+[filter "lfs"]
+   clean = git-lfs clean -- %f
+   smudge = git-lfs smudge -- %f
+   process = git-lfs filter-process
+   required = true
