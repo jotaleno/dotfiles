@@ -13,6 +13,8 @@ Install nvim
 Install neofetch
 Install delta
    https://github.com/dandavison/delta
+Install Atuin
+   https://github.com/atuinsh/atuin
 Install Docker
    https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
    https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user

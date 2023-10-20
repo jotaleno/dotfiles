@@ -112,16 +112,20 @@ export NVM_DIR="$HOME/.nvm"
 
 # Aliases
 alias ll="ls -laF"
+alias ls.="find . -maxdepth 1 -name \".*\""
 
 if command -v direnv 1>/dev/null 2>&1; then
   eval "$(direnv hook zsh)"
 fi
 
 if command -v thefuck 1>/dev/null 2>&1; then
-  eval $(thefuck --alias)
+  eval "$(thefuck --alias fk)"
 fi
 
 if command -v nvim 1>/dev/null 2>&1; then
   alias vim='nvim'
 fi
 
+if command -v atuin 1>/dev/null 2>&1; then
+   eval "$(atuin init zsh)"
+fi
