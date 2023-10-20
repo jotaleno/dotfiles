@@ -1,6 +1,6 @@
 [user]
    name = leno
-   email = 4483665+jotaleno@users.noreply.github.com 
+   # email = 4483665+jotaleno@users.noreply.github.com 
 [init]
    defaultBranch = main
 [core]
