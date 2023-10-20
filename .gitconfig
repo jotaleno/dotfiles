@@ -1,7 +1,4 @@
-[user]
-   name = leno
-   # email = 4483665+jotaleno@users.noreply.github.com 
-[init]
+ [init]
    defaultBranch = main
 [core]
    excludefiles = ~/.gitignore_global
