@@ -13,7 +13,6 @@ if ! gnome-extensions list | grep -q 'user-theme@gnome-shell-extensions.gcampax.
   echo "User Themes extension is not installed. Please install it and try again later."
   echo "https://extensions.gnome.org/extension/19/user-themes/"
   exit 1
-  gnome-extensions install user-theme@gnome-shell-extensions.gcampax.github.com
 fi
 
 if [ ! -f "$GNOME_SCHEMAS_PATH/$SCHEMA_NAME" ]; then
