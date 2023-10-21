@@ -22,7 +22,34 @@ if [ ! -f "$GNOME_SCHEMAS_PATH/$SCHEMA_NAME" ]; then
    sudo glib-compile-schemas $GNOME_SCHEMAS_PATH
 fi
 
+THEME_URL="https://github.com/dracula/gtk/archive/master.zip"
+THEME_DIRECTORY="$HOME/.themes/Dracula"
+
+if [ -d $THEME_DIRECTORY ]; then
+   echo "Dracula theme is already installed."
+else
+   mkdir -p $THEME_DIRECTORY && cd $THEME_DIRECTORY || exit
+   wget $THEME_URL
+   unzip ${THEME_URL##*/}
+   rm ${THEME_URL##*/}
+   mv gtk-master/* ./
+fi
+
+ICONS_URL="https://github.com/dracula/gtk/files/5214870/Dracula.zip"
+ICONS_DIRECTORY="$HOME/.icons/Dracula"
+
+if [ -d $ICONS_DIRECTORY ]; then
+   echo "Dracula icons are already installed."
+else
+   mkdir -p $ICONS_DIRECTORY && cd $ICONS_DIRECTORY || exit
+   wget $ICONS_URL
+   unzip ${ICONS_URL##*/}
+   rm ${ICONS_URL##*/}
+   mv Dracula/* ./
+fi
+
 gsettings set org.gnome.shell.extensions.user-theme name "Dracula"
+gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
 gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
-gsettings set org.gnome.desktop.interface icon-theme "Flatery-Indigo-Dark"
+gsettings set org.gnome.desktop.interface icon-theme "Dracula"
 gsettings set org.gnome.desktop.interface cursor-theme "Adwaita"
