@@ -118,14 +118,14 @@ if command -v direnv 1>/dev/null 2>&1; then
   eval "$(direnv hook zsh)"
 fi
 
-if command -v thefuck 1>/dev/null 2>&1; then
+if command -v thefuck &>/dev/null; then
   eval "$(thefuck --alias fk)"
 fi
 
-if command -v nvim 1>/dev/null 2>&1; then
+if command -v nvim &>/dev/null; then
   alias vim='nvim'
 fi
 
-if command -v atuin 1>/dev/null 2>&1; then
+if command -v atuin &>/dev/null; then
    eval "$(atuin init zsh)"
 fi
