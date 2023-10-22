@@ -125,6 +125,7 @@ alias ll="ls -laF"
 alias ls.="find . -maxdepth 1 -name \".*\""
 alias :q="exit"
 alias :wq"exit"
+alias ws="cd $HOME/workspace"
 
 if command -v direnv &>/dev/null; then
   eval "$(direnv hook zsh)"
