@@ -4,7 +4,7 @@ SCHEMA_NAME="org.gnome.shell.extensions.user-theme.gschema.xml"
 SCHEMAS_PATH="$HOME/.local/share/gnome-shell/extensions/user-theme@gnome-shell-extensions.gcampax.github.com/schemas"
 GNOME_SCHEMAS_PATH="/usr/share/glib-2.0/schemas"
 
-if ! command -v gnome-tweaks &> /dev/null; then
+if ! command -v gnome-tweaks &>/dev/null; then
    echo "gnome-tweaks tool is not installed. Installing it.."
    sudo apt-get install gnome-tweaks -y
 fi

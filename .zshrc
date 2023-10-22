@@ -65,6 +65,10 @@ ZSH_THEME="robbyrussell"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# To fix zsh-autoswitch-virtualenv while pyenv is not set
+alias python="python3"
+alias pip="pip3"
+
 # Which plugins would you like to load?
 # Standard plugins can be found in $ZSH/plugins/
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
@@ -122,18 +126,25 @@ alias ls.="find . -maxdepth 1 -name \".*\""
 alias :q="exit"
 alias :wq"exit"
 
-if command -v direnv &> /dev/null; then
+if command -v direnv &>/dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
-if command -v thefuck &> /dev/null; then
+if command -v thefuck &>/dev/null; then
   eval "$(thefuck --alias fk)"
 fi
 
-if command -v nvim &> /dev/null; then
+if command -v nvim &>/dev/null; then
   alias vim='nvim'
 fi
 
-if command -v atuin &> /dev/null; then
+if command -v atuin &>/dev/null; then
    eval "$(atuin init zsh)"
+fi
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
+
+if command -v pyenv &>/dev/null; then
+   eval "$(pyenv init -)"
 fi

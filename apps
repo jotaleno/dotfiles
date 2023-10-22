@@ -17,6 +17,9 @@ Install Atuin
    https://github.com/atuinsh/atuin
 Install Git and Git LFS
    https://git-lfs.com/
+Install Pyenv
+   https://github.com/pyenv/pyenv
+   https://github.com/pyenv/pyenv/wiki#suggested-build-environment
 Install Docker
    https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
    https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
