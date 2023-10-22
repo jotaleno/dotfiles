@@ -8,7 +8,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="alanpeabody"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -113,19 +114,21 @@ export NVM_DIR="$HOME/.nvm"
 # Aliases
 alias ll="ls -laF"
 alias ls.="find . -maxdepth 1 -name \".*\""
+alias :q="exit"
+alias :wq"exit"
 
-if command -v direnv 1>/dev/null 2>&1; then
+if command -v direnv &> /dev/null; then
   eval "$(direnv hook zsh)"
 fi
 
-if command -v thefuck &>/dev/null; then
+if command -v thefuck &> /dev/null; then
   eval "$(thefuck --alias fk)"
 fi
 
-if command -v nvim &>/dev/null; then
+if command -v nvim &> /dev/null; then
   alias vim='nvim'
 fi
 
-if command -v atuin &>/dev/null; then
+if command -v atuin &> /dev/null; then
    eval "$(atuin init zsh)"
 fi
