@@ -78,6 +78,9 @@ plugins=(
   history
 )
 
+# Manually install .zsh plugins
+source $HOME/.dotfiles/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -104,7 +107,7 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# alias ohmyzsh="mate ~/.oh-my-zsh" 
 
 # Node Version manager
 export NVM_DIR="$HOME/.nvm"
