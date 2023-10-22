@@ -13,6 +13,13 @@ Install Git and Git LFS
 Install Pyenv
    https://github.com/pyenv/pyenv
    https://github.com/pyenv/pyenv/wiki#suggested-build-environment
+Install SauceCodePro Font
+   https://www.nerdfonts.com/font-downloads
+   ~/.local/share/fonts
+   fc-cache -fv
+Install Ranger and devicons
+   https://github.com/ranger/ranger
+   https://github.com/alexanderjeurissen/ranger_devicons
 Install Docker
    https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
    https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
