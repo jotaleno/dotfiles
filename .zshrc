@@ -77,8 +77,11 @@ plugins=(
   history
 )
 
-# Manually install .zsh plugins
+# Manually installes .zsh plugins
 source $HOME/.dotfiles/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $HOME/.dotfiles/zsh-plugins/zsh-autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh
+
+fpath=($HOME/.dotfiles/zsh-plugins/zsh-completions/src $fpath)
 
 source $ZSH/oh-my-zsh.sh
 
