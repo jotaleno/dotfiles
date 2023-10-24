@@ -1,15 +1,10 @@
 Install Zsh
 Install Oh my zsh
    https://github.com/ohmyzsh/ohmyzsh/tree/f93976875133409297be864ce94d50f20a9bc18d
-Install direnv
-Install nvim
-Install neofetch
 Install delta
    https://github.com/dandavison/delta
 Install Atuin
    https://github.com/atuinsh/atuin
-Install Git and Git LFS
-   https://git-lfs.com/
 Install Pyenv
    https://github.com/pyenv/pyenv
    https://github.com/pyenv/pyenv/wiki#suggested-build-environment
@@ -24,6 +19,3 @@ Install ansible
    pip install ansible argcomplete
 Install rust
    https://doc.rust-lang.org/cargo/getting-started/installation.html
-Install Docker
-   https://docs.docker.com/engine/install/ubuntu/#install-using-the-repository
-   https://docs.docker.com/engine/install/linux-postinstall/#manage-docker-as-a-non-root-user
