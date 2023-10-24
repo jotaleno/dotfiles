@@ -3,12 +3,24 @@
   hosts: local
   gather_facts: yes
   become: yes
-  tasks:   
+  tasks:
   - name: Update package cache
     ansible.builtin.apt:
       update_cache: yes
-  
-  - name: Install neovim
+ 
+  - name: Install base packages
     ansible.builtin.apt:
-      name: neovim
+      name: "{{ item }}"
       state: present
+    loop:
+      - neofetch
+      - neovim
+      - direnv
+      - gnome-tweaks
+      - git
+      - git-lfs
+      - git-delta
+      - spotify-client
+
+  - name: Install docker 
+    ansible.builtin.include_tasks: tasks/install-docker.yml

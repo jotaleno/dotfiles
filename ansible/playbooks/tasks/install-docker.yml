@@ -1,0 +1,59 @@
+---
+- name: Install required packages
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - ca-certificates
+    - curl
+    - gnupg
+
+- name: Create /etc/apt/keyrings directory
+  ansible.builtin.file:
+    path: /etc/apt/keyrings
+    mode: 0755
+    state: directory
+
+- name: Download Docker's GPG key
+  ansible.builtin.shell: |
+    curl -fsSL /etc/apt/keyrings/docker.gpg https://download.docker.com/linux/ubuntu/gpg | gpg --dearmor -o /etc/apt/keyrings/docker.gpg
+# test -f /etc/apt/keyrings/docker.gpg ||
+  args:
+    executable: /bin/bash
+
+- name: Set permissions for the GPG key
+  ansible.builtin.file:
+    path: /etc/apt/keyrings/docker.gpg
+    mode: 0644
+
+- name: Add the Docker repository to Apt sources
+  ansible.builtin.apt_repository:
+    repo: deb [arch={{ ansible_architecture }} signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable
+    filename: docker
+    state: present
+
+#- name: Refresh Cache
+#  ansible.builtin.apt:
+#    update_cache: yes
+
+- name: Install docker packages
+  ansible.builtin.apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - docker-ce
+    - docker-ce-cli 
+    - containerd.io
+    - docker-buildx-plugin
+    - docker-compose-plugin
+
+- name: Create Docker group
+  ansible.builtin.group:
+    name: docker
+    state: present
+
+- name: "Add local user to Docker group"
+  ansible.builtin.user:
+    name: leno
+    groups: docker
+    append: yes
