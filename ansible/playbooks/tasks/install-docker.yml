@@ -47,7 +47,7 @@
     name: docker
     state: present
 
-- name: "Add local user to Docker group"
+- name: Add local user to Docker group
   ansible.builtin.user:
     name: leno
     groups: docker
