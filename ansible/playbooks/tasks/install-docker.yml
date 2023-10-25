@@ -49,6 +49,6 @@
 
 - name: Add local user to Docker group
   ansible.builtin.user:
-    name: leno
+    name: "{{ user }}"
     groups: docker
     append: yes
