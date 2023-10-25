@@ -138,6 +138,9 @@ fi
 
 if command -v nvim &>/dev/null; then
   alias vim='nvim'
+  alias vi='nvim'
+  export VISUAL=nvim
+  export EDITOR=nvim
 fi
 
 if command -v atuin &>/dev/null; then
