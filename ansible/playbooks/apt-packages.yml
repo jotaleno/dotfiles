@@ -22,6 +22,10 @@
       - git-lfs
       - git-delta
       - spotify-client
+  
   - name: Install docker 
     ansible.builtin.include_tasks: tasks/install-docker.yml
-    
+  
+  - name: Install steam
+    ansible.builtin.include_tasks: tasks/install-steam.yml
+

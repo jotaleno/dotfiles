@@ -1,0 +1,10 @@
+---
+- name: Download steam .deb package
+  ansible.builtin.get_url:
+    url: https://cdn.cloudflare.steamstatic.com/client/installer/steam.deb
+    dest: /tmp/steam.deb
+
+- name: Install steam .deb package
+  ansible.builtin.apt:
+    deb: /tmp/steam.deb
+    state: present
