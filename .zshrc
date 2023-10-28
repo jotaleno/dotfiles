@@ -1,3 +1,5 @@
+export DOT_PATH="$HOME/workspace/github/dotfiles"
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -82,10 +84,10 @@ plugins=(
 )
 
 # Manually installes .zsh plugins
-source $HOME/.dotfiles/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source $HOME/.dotfiles/zsh-plugins/zsh-autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh
+source $DOT_PATH/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source $DOT_PATH/zsh-plugins/zsh-autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh
 
-fpath=($HOME/.dotfiles/zsh-plugins/zsh-completions/src $fpath)
+fpath=($DOT_PATH/zsh-plugins/zsh-completions/src $fpath)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -127,6 +129,11 @@ alias :q="exit"
 alias :wq"exit"
 alias ws="cd $HOME/workspace"
 alias rg="ranger"
+
+# Functions
+lg() {
+  ls -a | grep -i "$1"
+}
 
 if command -v direnv &>/dev/null; then
   eval "$(direnv hook zsh)"
