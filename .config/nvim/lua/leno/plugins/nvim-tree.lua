@@ -1,11 +1,11 @@
 return {
-   "nvim-tree/nvim-tree.lua",
+  "nvim-tree/nvim-tree.lua",
   dependencies = {
     "nvim-tree/nvim-web-devicons"
   },
   config = function()
     -- disable netrw at the very start of your init.lua
-   vim.g.loaded_netrw = 1
+    vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
 
     -- set termguicolors to enable highlight groups
@@ -13,8 +13,8 @@ return {
 
     -- empty setup using defaults
     require("nvim-tree").setup()
-    
-    vim.cmd [[ autocmd VimEnter * NvimTreeFocus ]]
+
+    vim.cmd [[ autocmd VimEnter * :NvimTreeToggle ]]
   end
 }
 
