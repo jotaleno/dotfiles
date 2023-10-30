@@ -4,7 +4,11 @@ Repository to store my configuration dot files.
 
 # Instructions
 
-Run the main.yml ansible playbook to configure linux (need python and ansible instaled).
+Make sure to have Python and Ansible installed.
+
+Edit the ansible/hosts.yml file to point to the correct dotfiles Repository local path and host user name.
+
+Run the main.yml ansible playbook to configure linux.
 
 ```console
 leno@host:~$ git clone git@github.com:jotaleno/dotfiles.git
