@@ -4,28 +4,29 @@
   gather_facts: yes
   become: yes
   tasks:
-  - name: Update package cache
-    ansible.builtin.apt:
-      update_cache: yes
- 
-  - name: Install base packages
-    ansible.builtin.apt:
-      name: "{{ item }}"
-      state: present
-    loop:
-      - cmake
-      - neofetch
-      - neovim
-      - direnv
-      - gnome-tweaks
-      - git
-      - git-lfs
-      - git-delta
-      - spotify-client
-  
-  - name: Install docker 
-    ansible.builtin.include_tasks: tasks/install-docker.yml
-  
-  - name: Install steam
-    ansible.builtin.include_tasks: tasks/install-steam.yml
+    - name: Update package cache
+      ansible.builtin.apt:
+        update_cache: yes
 
+    - name: Install base packages
+      ansible.builtin.apt:
+        name: "{{ item }}"
+        state: present
+      loop:
+        - cmake
+        - neofetch
+        - neovim
+        - direnv
+        - gnome-tweaks
+        - git
+        - git-lfs
+        - git-delta
+        - spotify-client
+        - tmux
+        - ripgrep
+
+    - name: Install docker
+      ansible.builtin.include_tasks: tasks/install-docker.yml
+
+    - name: Install steam
+      ansible.builtin.include_tasks: tasks/install-steam.yml
