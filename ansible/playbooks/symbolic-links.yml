@@ -1,0 +1,18 @@
+---
+- name: Create symbolic links
+  hosts: local
+  gather_facts: yes
+  tasks:
+    - name: link
+      ansible.builtin.file:
+        src: "{{ dot_path }}/{{ item }}"
+        dest: "$HOME/{{ item }}"
+        state: link
+      loop:
+        - .gitconfig
+        - .gitignore_global
+        - .zshrc
+        - .config/atuin/config.toml
+        - .config/ranger
+        - .config/nvim
+        - .tmux.conf

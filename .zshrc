@@ -86,6 +86,7 @@ plugins=(
 # Manually installes .zsh plugins
 source $DOT_PATH/zsh-plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $DOT_PATH/zsh-plugins/zsh-autoswitch-virtualenv/autoswitch_virtualenv.plugin.zsh
+source $DOT_PATH/zsh-plugins/zsh-256color/zsh-256color.plugin.zsh
 
 fpath=($DOT_PATH/zsh-plugins/zsh-completions/src $fpath)
 

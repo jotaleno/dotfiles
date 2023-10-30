@@ -1,0 +1,10 @@
+---
+- name: Install tmux plugin manager
+  hosts: local
+  gather_facts: yes
+  tasks:
+    - name: Git clone tpm repository
+      ansible.builtin.git:
+        repo: https://github.com/tmux-plugins/tpm
+        dest: ~/.tmux/plugins/tpm
+        clone: true

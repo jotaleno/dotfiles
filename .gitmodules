@@ -14,3 +14,7 @@
 	path = .config/ranger/plugins/ranger_devicons
 	url = git@github.com:alexanderjeurissen/ranger_devicons.git
 	branch = main
+[submodule "zsh-plugins/zsh-256color"]
+	path = zsh-plugins/zsh-256color
+	url = https://github.com/chrissicool/zsh-256color
+	branch = master

@@ -6,3 +6,4 @@ ln -sf $(pwd)/.zshrc $HOME/.zshrc
 ln -sf $(pwd)/.config/atuin/config.toml $HOME/.config/atuin/config.toml
 ln -sf $(pwd)/.config/ranger $HOME/.config/ranger
 ln -sf $(pwd)/.config/nvim $HOME/.config/nvim
+ln -sf $(pwd)/.tmux.conf $HOME/.tmux.conf
