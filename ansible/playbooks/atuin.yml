@@ -1,0 +1,18 @@
+---
+- name: Install atuin
+  hosts: local
+  gather_facts: yes
+  tasks:
+    - name: Install rust and cargo
+      ansible.builtin.shell: |
+        spawn /bin/sh -c "curl https://sh.rustup.rs -sSf | sh"
+        expect "1) Proceed with installation (default)"
+        send "1\r"
+        expect eof
+      args:
+        executable: /usr/bin/expect
+
+    - name: Cargo install atuin
+      community.general.cargo:
+        name: atuin
+        state: present

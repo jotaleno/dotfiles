@@ -3,3 +3,4 @@
 - import_playbook: playbooks/apt-packages.yml
 - import_playbook: playbooks/fonts.yml
 - import_playbook: playbooks/tmux-tpm.yml
+- import_playbook: playbooks/atuin.yml
