@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 export DOT_PATH="$HOME/workspace/github/dotfiles"
 
 # If you come from bash you might have to change your $PATH.
@@ -10,7 +17,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -136,6 +143,36 @@ lg() {
   ls -a | grep -i "$1"
 }
 
+tn() {
+  if [ "#1" -ne 1 ]; then
+    echo "Usage: tn <session-name>"
+    return 1
+  fi
+
+  tmux new -s "$1"
+}
+
+ta() {
+  if [ "#1" -ne 1 ]; then
+    echo "Usage: ta <session-name>"
+    return 1
+  fi
+
+  tmux attach -t "$1"
+}
+
+td() {
+  tmux detach
+}
+
+tls() {
+  tmux ls
+}
+
+te() {
+  exit
+}
+
 if command -v direnv &>/dev/null; then
   eval "$(direnv hook zsh)"
 fi
@@ -162,3 +199,6 @@ if command -v pyenv &>/dev/null; then
    eval "$(pyenv init -)"
    eval "$(pyenv virtualenv-init -)"
 fi
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

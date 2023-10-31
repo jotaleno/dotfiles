@@ -13,6 +13,7 @@
         name: "{{ item }}"
         state: present
       loop:
+        - zsh
         - cmake
         - neofetch
         - neovim
