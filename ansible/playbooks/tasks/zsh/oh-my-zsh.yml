@@ -1,0 +1,12 @@
+---
+- name: Check if $ZSH folder exists
+  ansible.builtin.stat:
+    path: "{{ lookup('env', 'ZSH') }}"
+  register: zsh_folder
+
+- name: Download and install Oh My Zsh
+  ansible.builtin.shell: |
+    sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  args:
+    executable: /bin/bash
+  when: not zsh_folder.stat.exists

@@ -13,7 +13,6 @@
         name: "{{ item }}"
         state: present
       loop:
-        - zsh
         - cmake
         - neofetch
         - neovim
@@ -28,7 +27,7 @@
         - expect
 
     - name: Install docker
-      ansible.builtin.include_tasks: tasks/install-docker.yml
+      ansible.builtin.include_tasks: tasks/apt-packages/docker.yml
 
     - name: Install steam
-      ansible.builtin.include_tasks: tasks/install-steam.yml
+      ansible.builtin.include_tasks: tasks/apt-packages/steam.yml

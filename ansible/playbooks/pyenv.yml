@@ -1,0 +1,16 @@
+---
+- name: Create symbolic links
+  hosts: local
+  gather_facts: yes
+  tasks:
+    - name: Check if $PYENV_ROOT exists
+      ansible.builtin.stat:
+        path: "{{ lookup('env', 'PYENV_ROOT') }}"
+      register: pyenv_root
+
+    - name: Download and install pyenv
+      ansible.builtin.shell: |
+        curl https://pyenv.run | bash
+      args:
+        executable: /bin/bash
+      when: not pyenv_root.stat.exists

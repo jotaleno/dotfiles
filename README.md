@@ -4,7 +4,7 @@ Repository to store my configuration dot files. The automation of the Linux setu
 
 # Instructions
 
-Make sure to have Python and Ansible installed.
+Make sure to have Python and Ansible installed. (pip pinstall ansible argcomplete)
 
 Edit the `ansible/hosts.yml` file to point to the correct dotfiles repository path and host user name.
 

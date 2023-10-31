@@ -1,0 +1,7 @@
+---
+- name: Git clone tpm repository
+  ansible.builtin.git:
+    repo: https://github.com/romkatv/powerlevel10k.git
+    dest: ~/.oh-my-zsh/themes/powerlevel10k
+    clone: true
+    depth: 1

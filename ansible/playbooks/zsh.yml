@@ -1,0 +1,17 @@
+---
+- name: Install zsh and its related components
+  hosts: local
+  tasks:
+    - name: apt install zsh
+      ansible.builtin.apt:
+        name: zsh
+        state: present
+
+    - name: Install oh-my-zsh
+      ansible.builtin.include_tasks: tasks/zsh/oh-my-zsh.yml
+
+    - name: Install meslo fonts
+      ansible.builtin.include_tasks: tasks/zsh/fonts.yml
+
+    - name: Install powerlevel10k
+      ansible.builtin.include_tasks: tasks/zsh/powerlevel10k.yml
