@@ -15,7 +15,6 @@
       loop:
         - cmake
         - neofetch
-        - neovim
         - direnv
         - gnome-tweaks
         - git
