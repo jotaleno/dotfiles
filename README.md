@@ -13,6 +13,7 @@ Run the `ansible/main.yml` ansible playbook to start the setup configuration.
 ```console
 leno@host:~$ git clone git@github.com:jotaleno/dotfiles.git
 leno@host:~$ cd dotfiles
+leno@host:~$ git submodule update --init
 leno@host:~$ ansible-playbook -i ansible/hosts.yml ansible/main.yml -K
 leno@host:~$ chmod +x themes/install.sh
 leno@host:~$ ./themes/install.sh
