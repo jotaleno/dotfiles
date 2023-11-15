@@ -17,6 +17,11 @@ return {
 
     -- configure nvim-tree
     nvimtree.setup({
+      sort_by = "case_sensitive",
+      update_focused_file = {
+        enable = true,
+        update_cwd = true,
+      },
       view = {
         width = 35,
         relativenumber = true,
@@ -53,7 +58,7 @@ return {
       },
     })
 
-    vim.cmd([[ autocmd VimEnter * :NvimTreeToggle ]])
+    -- vim.cmd([[ autocmd VimEnter * :NvimTreeToggle ]])
 
     -- set keymaps
     local keymap = vim.keymap -- for conciseness
